@@ -19,10 +19,10 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const temperature = await axios.get("https://green-house-server-53a4.onrender.com/temp");
-        const humidity = await axios.get("https://green-house-server-53a4.onrender.com/humid");
-        const ph = await axios.get("https://green-house-server-53a4.onrender.com/ph");
-        const ec = await axios.get("https://green-house-server-53a4.onrender.com/ec");
+        const temperature = await axios.get("https://hydroponic-server-j3bc.onrender.com/temp");
+        const humidity = await axios.get("https://hydroponic-server-j3bc.onrender.com/humid");
+        const ph = await axios.get("https://hydroponic-server-j3bc.onrender.com/ph");
+        const ec = await axios.get("https://hydroponic-server-j3bc.onrender.com/ec");
 
         setData({
           temperature: temperature.data.temperature,
@@ -42,7 +42,7 @@ const App = () => {
 
   const handleButton1 = async (state) => {
     try {
-      await axios.post("https://green-house-server-53a4.onrender.com/buttons", { button: 1, state: state });
+      await axios.post("https://hydroponic-server-j3bc.onrender.com/buttons", { button: 1, state: state });
       setButton1State(state);
     } catch (error) {
       console.error("Error sending button1 state:", error);
@@ -51,7 +51,7 @@ const App = () => {
 
   const handleButton2 = async (state) => {
     try {
-      await axios.post("https://green-house-server-53a4.onrender.com/buttons", { button: 2, state: state });
+      await axios.post("https://hydroponic-server-j3bc.onrender.com/buttons", { button: 2, state: state });
       setButton2State(state);
     } catch (error) {
       console.error("Error sending button2 state:", error);
